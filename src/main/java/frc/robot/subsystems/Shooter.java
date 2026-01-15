@@ -24,7 +24,7 @@ public class Shooter extends SubsystemBase {
     }
 
     public enum VelocidadeShooter {
-        NORMAL(0.25),
+        NORMAL(0.35),
         MEDIA(0.50),
         ALTA(0.60),
         TURBO(0.70);
@@ -71,14 +71,22 @@ public class Shooter extends SubsystemBase {
 
     /* ========= CONTROLE ========= */
 
-    public void ligarFrente() {
-        direcaoAtual = DirecaoShooter.FRENTE;
-        aplicar();
+    public void toggleFrente() {
+        if (direcaoAtual == DirecaoShooter.FRENTE) {
+            parar();
+        } else {
+            direcaoAtual = DirecaoShooter.FRENTE;
+            aplicar();
+        }
     }
 
-    public void ligarTras() {
-        direcaoAtual = DirecaoShooter.TRAS;
-        aplicar();
+    public void toggleTras() {
+        if (direcaoAtual == DirecaoShooter.TRAS) {
+            parar();
+        } else {
+            direcaoAtual = DirecaoShooter.TRAS;
+            aplicar();
+        }
     }
 
     public void parar() {
@@ -112,6 +120,17 @@ public class Shooter extends SubsystemBase {
 
     public boolean boquinhaEstaGirando() {
         return Math.abs(boquinhaEncoder.getVelocity()) > RPM_MIN_GIRANDO;
+    }
+    public boolean estaAtivo() {
+        return direcaoAtual != DirecaoShooter.PARADO;
+    }
+
+    public DirecaoShooter getDirecaoAtual() {
+        return direcaoAtual;
+    }
+
+    public VelocidadeShooter getVelocidadeAtual() {
+        return velocidadeAtual;
     }
 
     /* ========= DASHBOARD ========= */

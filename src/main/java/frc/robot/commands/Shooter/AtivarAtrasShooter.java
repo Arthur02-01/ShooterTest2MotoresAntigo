@@ -12,7 +12,7 @@ public class AtivarAtrasShooter extends Command{
     }
     @Override
     public void initialize(){
-        shooter.ligarTras();
+        shooter.toggleTras();
     }
     @Override
     public boolean isFinished(){

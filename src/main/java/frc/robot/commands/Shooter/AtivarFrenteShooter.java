@@ -14,7 +14,7 @@ public class AtivarFrenteShooter extends Command {
 
     @Override
     public void initialize() {
-        shooter.ligarFrente();
+        shooter.toggleFrente();
     }
 
     @Override

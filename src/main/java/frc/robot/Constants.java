@@ -5,8 +5,8 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
   public static class Shooter{
-   public static final int ShooterArlindo =1;
-     public static final int ShooterBoquinha =2;
+   public static final int ShooterArlindo =8;
+     public static final int ShooterBoquinha =9;
   }
   public static class EncoderShooter{
     public static final int ArlindoEncoder = 3;
